@@ -13,7 +13,7 @@ env:
 
 jobs:
   build-and-push:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     
     steps:
       # 1. 깃허브 저장소(로컬 코드) 체크아웃
