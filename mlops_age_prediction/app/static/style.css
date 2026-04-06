@@ -208,14 +208,20 @@ header p {
     font-weight: 600;
 }
 
-.age-badge {
+.age-badge, .gender-badge {
     background: linear-gradient(135deg, #6366f1, #d946ef);
-    padding: 1rem 3rem;
+    padding: 1rem 2.5rem;
     border-radius: 50px;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 800;
     box-shadow: 0 15px 30px -5px rgba(217, 70, 239, 0.4);
     animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-block;
+}
+
+.gender-badge {
+    background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+    box-shadow: 0 15px 30px -5px rgba(59, 130, 246, 0.4);
 }
 
 @keyframes popIn {

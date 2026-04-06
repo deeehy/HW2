@@ -117,6 +117,9 @@ analyzeBtn.addEventListener('click', async () => {
 
         // 성공! 결과 업데이트
         ageResult.textContent = result.predicted_age_range;
+        if (result.predicted_gender) {
+            document.getElementById('genderResult').textContent = result.predicted_gender.toUpperCase();
+        }
         
         // 로딩 끄고 결과 뱃지 켜기 (애니메이션 발동)
         loadingOverlay.classList.add('hidden');
