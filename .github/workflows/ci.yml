@@ -9,7 +9,7 @@ on:
 # 환경 변수 설정. DOCKER_USERNAME이 ID 역할을 함
 env:
   # 생성될 Docker 이미지 이름 (예: myid/mlops-age-prediction)
-  IMAGE_NAME: ${{ secrets.DOCKER_USERNAME }}/mlops-age-prediction
+  IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/mlops-age-prediction
 
 jobs:
   build-and-push:
