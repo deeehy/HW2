@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgePredict.ai Premium</title>
+    <!-- Google Fonts 탑재 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- 배경 애니메이션 효과 (로봇 눈빛/오브젝트) -->
+    <div class="background-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
+    
+    <div class="container">
+        <!-- 헤더 영역 -->
+        <header>
+            <h1>AgePredict<span class="highlight">.ai</span></h1>
+            <p>고도화된 MLOps 파이프라인으로 당신의 사진 속 나이를 즉시 예측합니다.</p>
+        </header>
+
+        <!-- 메인 글래스모피즘 카드 영역 -->
+        <main class="glass-card">
+            <!-- 상태 1: 업로드 대기 -->
+            <div class="upload-area" id="dropzone">
+                <input type="file" id="fileInput" accept="image/*" hidden>
+                <div class="icon">✨📸✨</div>
+                <h3>여기로 사진을 드래그하세요</h3>
+                <p>또는 <button id="browseBtn">파일 찾기</button></p>
+            </div>
+
+            <!-- 상태 2: 이미지 미리보기 / 로딩 / 결과 출력 -->
+            <div class="preview-area hidden" id="previewArea">
+                <img id="imagePreview" src="" alt="Face Preview">
+                
+                <!-- 분석 중 로딩 오버레이 -->
+                <div class="loading-overlay hidden" id="loadingOverlay">
+                    <div class="spinner"></div>
+                    <p>AI 모델이 구조를 뜯어보는 중...</p>
+                </div>
+                
+                <!-- 결과 출력 오버레이 -->
+                <div class="result-overlay hidden" id="resultOverlay">
+                    <p class="result-title">예측 나이대</p>
+                    <span class="age-badge" id="ageResult">--</span>
+                </div>
+            </div>
+            
+            <!-- 액션 버튼 -->
+            <div class="actions">
+                <button class="primary-btn hidden" id="analyzeBtn">스캐닝 시작</button>
+                <button class="secondary-btn hidden" id="resetBtn">다른 사진 테스트</button>
+            </div>
+            
+            <!-- 에러 바 -->
+            <div class="error-msg hidden" id="errorMsg"></div>
+        </main>
+        
+        <!-- 푸터 -->
+        <footer>
+            Engineered with FastAPI & Transformers
+        </footer>
+    </div>
+
+    <!-- 로직 자바스크립트 -->
+    <script src="/static/script.js"></script>
+</body>
+</html>
