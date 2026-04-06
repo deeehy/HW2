@@ -48,7 +48,8 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./mlops_age_prediction
+          file: ./mlops_age_prediction/Dockerfile
           # Push 이벤트일 경우에만 실제 Docker Hub에 Push 수행 (PR일 땐 Build 테스트만 수행)
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
